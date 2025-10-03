@@ -122,8 +122,19 @@ modules:
       - notify: true 
         scope: system
         install: 
-          - org.mozilla.firefox
-          - org.gnome.Loupe
+          - tv.kodi.Kodi
+          - com.rustdesk.RustDesk
+          - com.vscodium.codium
+          - fr.handbrake.ghb
+          - io.github.martchus.syncthingtray
+          - org.fedoraproject.MediaWriter
+          - org.gtk.Gtk3theme.Breeze
+          - org.kde.kamoso
+          - com.anydesk.Anydesk
+          - org.kde.isoimagewriter
+          - org.onlyoffice.desktopeditors
+          - org.qbittorrent.qBittorrent
+          - org.videolan.VLC
 
   - type: chezmoi
     repository: "http://localhost/dotfiles" # my dotfiles repo
