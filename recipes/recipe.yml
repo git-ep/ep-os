@@ -1,13 +1,9 @@
 ---
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
-name: template
-# description will be included in the image's metadata
+name: ep-os
 description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: quay.io/fedora/fedora-bootc
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -19,27 +15,128 @@ modules:
 
   - type: dnf
     repos:
-      copr:
-        - atim/starship
+      nonfree: rpmfusion
+
+    group-install:
+      packages:
+        - kde-desktop
+        
+    replace:
+      - from-repo: rpmfusion
+        packages:
+          - old: mesa-va-drivers
+            new: mesa-va-drivers-freeworld
+
+    replace:
+      - from-repo: rpmfusion
+        allow-erasing: true
+        packages:
+          - old: ffmpeg-free
+            new: ffmpeg
+
     install:
       packages:
-        - micro
-        - starship
+        - neovim
+        - python3-neovim
+        - python3-pip
+        - zsh
+        - tmux
+        - distrobox
+        - cockpit
+        - cockpit-files
+        - cockpit-machines
+        - cockpit-networkmanager
+        - cockpit-ostree
+        - cockpit-podman
+        - cockpit-selinux
+        - cockpit-storaged
+        - minicom
+        - bmon
+        - pavucontrol-qt
+        - intel-media-driver
+        - libva-intel-driver
+        - snapper
+        - btrbk
+        - rsnapshot
+        - virt-manager
+        - virt-viewer
+        - syncthing
+        - git
+        - qt5ct
+        - qt6ct
+        - papirus-icon-theme
+        - sysstat
+        - lm_sensors
+        - keepassxc
+        - copyq
+        - libva-utils
+        - rclone
+        - hyprland
+        - waybar
+        - wofi
+        - dunst
+        - swaybg
+        - chromium
+        - kitty
+        - firefox
+        - mozilla-ublock-origin
+        - zathura
+        - zathura-plugins-all
+        - htop
+        - python3-devel
+        - helix
+        - broadcom-wl
+        - mkvtoolnix
+        - mpv
+        - skopeo
+        - htop
+        - telnet
+        - rsync
+        - iperf3
+        - alsa-sof-firmware
+        - wget
+        - curl
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - toolbox
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true 
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+        install: 
           - org.mozilla.firefox
           - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: chezmoi
+    install: true
+    repository: "http://localhost/dotfiles" # my dotfiles repo
+    all-users: false # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
+
+  - type: copy
+    from: docker.io/binwiederhier/ntfy
+    src: /usr/bin/ntfy
+    dest: /usr/bin/
+
+  - type: script
+    snippets:
+      - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
+      - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
+      - "rm /tmp/application-title-bar.plasmoid"
+
+  - type: systemd
+    system:
+      enabled:
+        - lm_sensors
+        - sshd
+        - cockpit.socket
+        - sysstat
+        - tuned
+        - fstrim.timer
+        - podman.socket
+        - podman-auto-update.timer
+        - cockpit.socket
+        - libvirtd.socket
+
+  - type: signing 
