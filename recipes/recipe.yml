@@ -2,7 +2,7 @@
 name: ep-os
 description: This is my personal OS image.
 
-base-image: quay.io/fedora/fedora-bootc
+base-image: quay.io/fedora/fedora-kinoite
 image-version: latest
 
 # module configuration, executed in order
@@ -17,9 +17,9 @@ modules:
     repos:
       nonfree: rpmfusion
 
-    group-install:
-      packages:
-        - kde-desktop
+#    group-install:
+#      packages:
+#        - kde-desktop
         
     replace:
       - from-repo: rpmfusion
