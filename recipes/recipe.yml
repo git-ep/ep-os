@@ -109,7 +109,6 @@ modules:
           - org.gnome.Loupe
 
   - type: chezmoi
-    install: true
     repository: "http://localhost/dotfiles" # my dotfiles repo
     all-users: false # make users have to enable chezmoi manually
     file-conflict-policy: replace # override changed files with those from the repo
