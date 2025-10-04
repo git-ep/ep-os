@@ -67,7 +67,6 @@ modules:
         - keepassxc
         - copyq
         - libva-utils
-        - rclone
         - hyprland
         - waybar
         - wofi
@@ -153,6 +152,8 @@ modules:
       - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
       - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
       - "rm /tmp/application-title-bar.plasmoid"
+      # Rclone from rclone.org
+      - "curl https://rclone.org/install.sh | sudo bash"
 
   - type: systemd
     system:
