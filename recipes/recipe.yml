@@ -142,13 +142,14 @@ modules:
     all-users: false # make users have to enable chezmoi manually
     file-conflict-policy: replace # override changed files with those from the repo
 
-  - type: copy
-    from: docker.io/binwiederhier/ntfy
-    src: /usr/bin/ntfy
-    dest: /usr/bin/
-
   - type: script
     snippets:
+      # Install ntfy.sh
+      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.14.0/ntfy_2.14.0_linux_am  d64.tar.gz -O /tmp/ntfy_2.14.0_linux_amd64.tar.gz"
+      - "cd /tmp && tar -xzf ntfy_2.14.0_linux_amd64.tar.gz"
+      - "cp -a /tmp/ntfy_2.14.0_linux_amd64/ntfy /usr/bin/"
+      - "mkdir /etc/ntfy && cp /tmp/ntfy_2.14.0_linux_amd64/{client,server}/*.yml /etc/ntfy"
+      # Install application title bar plasmoid
       - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
       - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
       - "rm /tmp/application-title-bar.plasmoid"
