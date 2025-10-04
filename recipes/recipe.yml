@@ -96,6 +96,7 @@ modules:
         - nodejs-bash-language-server
         - openvswitch
         - NetworkManager-ovs
+        - imv
     remove:
       packages:
         - toolbox
