@@ -143,7 +143,7 @@ modules:
     snippets:
       # Install ntfy.sh
       - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.14.0/ntfy_2.14.0_linux_amd64.tar.gz -O /tmp/ntfy_2.14.0_linux_amd64.tar.gz"
-      - "tar -xzf ntfy_2.14.0_linux_amd64.tar.gz -C /tmp"
+      - "tar -xzf /tmp/ntfy_2.14.0_linux_amd64.tar.gz -C /tmp"
       - "cp -a /tmp/ntfy_2.14.0_linux_amd64/ntfy /usr/bin/"
       - "mkdir /etc/ntfy"
       - "cp /tmp/ntfy_2.14.0_linux_amd64/client/*.yml /etc/ntfy"
