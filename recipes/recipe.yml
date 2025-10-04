@@ -18,10 +18,6 @@ modules:
     repos:
       nonfree: rpmfusion
 
-    #group-install:
-    #  packages:
-    #    - kde-desktop
-        
     replace:
       - from-repo: rpmfusion
         packages:
@@ -136,6 +132,7 @@ modules:
           - org.onlyoffice.desktopeditors
           - org.qbittorrent.qBittorrent
           - org.videolan.VLC
+          - com.brave.Browser
 
   - type: chezmoi
     repository: "http://localhost/dotfiles" # my dotfiles repo
@@ -145,10 +142,11 @@ modules:
   - type: script
     snippets:
       # Install ntfy.sh
-      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.14.0/ntfy_2.14.0_linux_am  d64.tar.gz -O /tmp/ntfy_2.14.0_linux_amd64.tar.gz"
-      - "cd /tmp && tar -xzf ntfy_2.14.0_linux_amd64.tar.gz"
+      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.14.0/ntfy_2.14.0_linux_amd64.tar.gz -O /tmp/ntfy_2.14.0_linux_amd64.tar.gz"
+      - "tar -xzf ntfy_2.14.0_linux_amd64.tar.gz -C /tmp"
       - "cp -a /tmp/ntfy_2.14.0_linux_amd64/ntfy /usr/bin/"
       - "mkdir /etc/ntfy && cp /tmp/ntfy_2.14.0_linux_amd64/{client,server}/*.yml /etc/ntfy"
+      - "rm -fr /tmp/ntfy_2.14.0_linux_amd64*"
       # Install application title bar plasmoid
       - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
       - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
