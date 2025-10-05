@@ -155,6 +155,7 @@ modules:
       - "rm /tmp/application-title-bar.plasmoid"
       # Rclone from rclone.org
       - "curl https://rclone.org/install.sh | sudo bash"
+      - "ln -s /usr/bin/rclone /usr/sbin/mount.rclone"
 
   - type: systemd
     system:
