@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily Fedora kinoite Update Timer
+ConditionPathExists=/run/ostree-booted
+
+[Timer]
+OnCalendar=*-*-* 2:00:00
+RandomizedDelaySec=2h
+WakeSystem=true
+#Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily Fedora kinoite Update Service
+ConditionPathExists=/run/ostree-booted
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/kinoite-update
+ExecStartPost=/usr/bin/systemctl enable suspend-after-reboot-bootc.service
+ExecStartPost=/usr/bin/systemctl reboot
+
+[Install]
+WantedBy=timers.target

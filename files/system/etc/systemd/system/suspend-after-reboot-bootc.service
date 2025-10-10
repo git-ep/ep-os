@@ -1,0 +1,10 @@
+[Unit]
+Description = Suspend system after upgrade
+After = sddm.service
+
+[Service]
+ExecStartPre=/usr/bin/systemctl disable suspend-after-reboot-bootc.service
+ExecStart = /usr/bin/systemctl suspend
+
+[Install]
+WantedBy = default.target
