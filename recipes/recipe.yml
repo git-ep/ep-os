@@ -171,6 +171,5 @@ modules:
         - podman-auto-update.timer
         - cockpit.socket
         - libvirtd.socket
-        - bootc-fetch-apply-updates.timer
 
   - type: signing 
