@@ -59,20 +59,20 @@ modules:
         - virt-viewer
         - syncthing
         - git
-#        - qt5ct
-#        - qt6ct
+        - qt5ct
+        - qt6ct
         - papirus-icon-theme
         - sysstat
         - lm_sensors
         - keepassxc
         - copyq
         - libva-utils
-#        - hyprland
-#        - waybar
-#        - wofi
-#        - dunst
-#        - swaybg
-#        - swayidle
+        - sway
+        - waybar
+        - wofi
+        - dunst
+        - swaybg
+        - swayidle
         - chromium
         - kitty
         - firefox
