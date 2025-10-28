@@ -4,7 +4,7 @@ name: ep-os
 description: This is my personal OS image.
 
 base-image: quay.io/fedora/fedora-kinoite
-image-version: latest
+image-version: 43
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
