@@ -16,6 +16,8 @@ modules:
 
   - type: dnf
     repos:
+      copr:
+        -  solopasha/hyprland
       nonfree: rpmfusion
 
     replace:
