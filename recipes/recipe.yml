@@ -82,7 +82,6 @@ modules:
         - htop
         - python3-devel
         - helix
-        - broadcom-wl
         - mkvtoolnix
         - mpv
         - skopeo
