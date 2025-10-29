@@ -16,6 +16,8 @@ modules:
 
   - type: dnf
     repos:
+      copr:
+        - solopasha/hyprland 
       nonfree: rpmfusion
 
     replace:
@@ -67,7 +69,7 @@ modules:
         - keepassxc
         - copyq
         - libva-utils
-        - sway
+        - hyprland
         - waybar
         - wofi
         - dunst
