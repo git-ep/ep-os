@@ -70,6 +70,8 @@ modules:
         - copyq
         - libva-utils
         - hyprland
+        - hyprland-qt-support
+        - hyprland-qtutils
         - waybar
         - wofi
         - dunst
