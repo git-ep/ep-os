@@ -61,7 +61,6 @@ modules:
         - virt-viewer
         - syncthing
         - git
-        - hyprqt6engine
         - papirus-icon-theme
         - sysstat
         - lm_sensors
