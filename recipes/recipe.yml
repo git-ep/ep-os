@@ -72,7 +72,7 @@ modules:
         - waybar
         - wofi
         - dunst
-        - swaybg
+        - hyprpaper
         - hypridle
         - chromium
         - kitty
