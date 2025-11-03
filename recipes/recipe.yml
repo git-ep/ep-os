@@ -73,7 +73,7 @@ modules:
         - wofi
         - dunst
         - swaybg
-        - swayidle
+        - hypridle
         - chromium
         - kitty
         - firefox
