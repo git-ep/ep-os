@@ -175,4 +175,5 @@ modules:
         - cockpit.socket
         - libvirtd.socket
 
+  - type: initramfs
   - type: signing 
