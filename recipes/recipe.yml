@@ -89,6 +89,7 @@ modules:
         - htop
         - telnet
         - rsync
+        - nmap
         - iperf3
         - alsa-sof-firmware
         - wget
