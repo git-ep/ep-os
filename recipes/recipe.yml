@@ -99,7 +99,6 @@ modules:
         - openvswitch
         - NetworkManager-ovs
         - imv
-        - podman-compose
         - clevis-dracut
     remove:
       packages:
