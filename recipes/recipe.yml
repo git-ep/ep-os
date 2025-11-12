@@ -176,5 +176,11 @@ modules:
         - cockpit.socket
         - libvirtd.socket
 
+  - type: kargs
+    arch: x86_64
+    kargs:
+      - rd.neednet=1
+
   - type: initramfs
+
   - type: signing 
