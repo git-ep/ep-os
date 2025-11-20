@@ -100,6 +100,7 @@ modules:
         - NetworkManager-ovs
         - imv
         - clevis-dracut
+        - samba
     remove:
       packages:
         - toolbox
