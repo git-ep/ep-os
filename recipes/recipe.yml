@@ -162,6 +162,8 @@ modules:
       - "ln -s /usr/bin/rclone /usr/sbin/mount.rclone"
       # zellij
       - "curl --location https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz | tar -C /usr/bin -xz"
+      # Export any file or directory, allowing read and write permissions in samba
+      - "setsebool -P samba_export_all_rw 1" 
 
   - type: systemd
     system:
