@@ -101,6 +101,7 @@ modules:
         - imv
         - clevis-dracut
         - samba
+        - unison
     remove:
       packages:
         - toolbox
