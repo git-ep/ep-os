@@ -20,19 +20,25 @@ modules:
         - solopasha/hyprland 
       nonfree: rpmfusion
 
-    replace:
-      - from-repo: rpmfusion
-        packages:
-          - old: mesa-va-drivers
-            new: mesa-va-drivers-freeworld
+#    replace:
+#      - from-repo: rpmfusion
+#        packages:
+#          - old: mesa-va-drivers
+#            new: mesa-va-drivers-freeworld
+#
+#    replace:
+#      - from-repo: rpmfusion
+#        allow-erasing: true
+#        packages:
+#          - old: ffmpeg-free
+#            new: ffmpeg
 
-    replace:
-      - from-repo: rpmfusion
-        allow-erasing: true
-        packages:
-          - old: ffmpeg-free
-            new: ffmpeg
+  - type: script
+    snippets:
+      - "dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y"
+      - "dnf swap ffmpeg-free ffmpeg --allowerasing -y"
 
+  - type: dnf
     install:
       packages:
         - neovim
