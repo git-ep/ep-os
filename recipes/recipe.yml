@@ -144,6 +144,8 @@ modules:
           - org.qbittorrent.qBittorrent
           - org.videolan.VLC
           - com.brave.Browser
+          - org.texstudio.TeXstudio
+          - org.freedesktop.Sdk.Extension.texlive//25.08
 
   - type: chezmoi
     repository: "http://localhost/dotfiles" # my dotfiles repo
