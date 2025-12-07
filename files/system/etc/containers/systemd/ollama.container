@@ -1,0 +1,19 @@
+[Unit]
+Description=Ollama container
+before=network-online.target
+
+[Container]
+Image=docker.io/ollama/ollama:rocm
+ContainerName=ollama
+AddDevice=/dev/kfd
+AddDevice=/dev/dri
+Environment=OLLAMA_VULKAN=1
+Network=host
+Volume=ollama:/root/.ollama
+AutoUpdate=registry
+
+[Service]
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=default.target
