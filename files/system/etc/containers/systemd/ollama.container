@@ -3,9 +3,8 @@ Description=Ollama container
 before=network-online.target
 
 [Container]
-Image=docker.io/ollama/ollama:rocm
+Image=docker.io/ollama/ollama:latest
 ContainerName=ollama
-AddDevice=/dev/kfd
 AddDevice=/dev/dri
 Environment=OLLAMA_VULKAN=1
 Network=host
