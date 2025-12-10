@@ -108,6 +108,7 @@ modules:
         - clevis-dracut
         - samba
         - unison
+        - age
     remove:
       packages:
         - toolbox
