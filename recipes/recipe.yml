@@ -109,6 +109,7 @@ modules:
         - samba
         - unison
         - age
+        - autojump-zsh
     remove:
       packages:
         - toolbox
