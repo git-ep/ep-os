@@ -16,6 +16,8 @@ modules:
 
   - type: dnf
     repos:
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
       copr:
         - solopasha/hyprland 
       nonfree: rpmfusion
@@ -41,6 +43,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - code
         - neovim
         - python3-neovim
         - python3-pip
