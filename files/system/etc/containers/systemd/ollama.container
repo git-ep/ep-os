@@ -1,6 +1,6 @@
 [Unit]
 Description=Ollama container
-before=network-online.target
+Before=network-online.target
 
 [Container]
 Image=docker.io/ollama/ollama:latest
