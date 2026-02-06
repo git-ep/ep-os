@@ -112,6 +112,7 @@ modules:
         - samba
         - unison
         - age
+        - fzf
     remove:
       packages:
         - toolbox
