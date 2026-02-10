@@ -160,13 +160,13 @@ modules:
   - type: script
     snippets:
       # Install ntfy.sh
-      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.16.0/ntfy_2.16.0_linux_amd64.tar.gz -O /tmp/ntfy_2.16.0_linux_amd64.tar.gz"
-      - "tar -xzf /tmp/ntfy_2.16.0_linux_amd64.tar.gz -C /tmp"
-      - "cp -a /tmp/ntfy_2.16.0_linux_amd64/ntfy /usr/bin/"
+      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.17.0/ntfy_2.17.0_linux_amd64.tar.gz -O /tmp/ntfy_2.17.0_linux_amd64.tar.gz"
+      - "tar -xzf /tmp/ntfy_2.17.0_linux_amd64.tar.gz -C /tmp"
+      - "cp -a /tmp/ntfy_2.17.0_linux_amd64/ntfy /usr/bin/"
       - "mkdir /etc/ntfy"
-      - "cp /tmp/ntfy_2.16.0_linux_amd64/client/*.yml /etc/ntfy"
-      - "cp /tmp/ntfy_2.16.0_linux_amd64/server/*.yml /etc/ntfy"
-      - "rm -fr /tmp/ntfy_2.16.0_linux_amd64*"
+      - "cp /tmp/ntfy_2.17.0_linux_amd64/client/*.yml /etc/ntfy"
+      - "cp /tmp/ntfy_2.17.0_linux_amd64/server/*.yml /etc/ntfy"
+      - "rm -fr /tmp/ntfy_2.17.0_linux_amd64*"
       # Install application title bar plasmoid
       - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
       - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
