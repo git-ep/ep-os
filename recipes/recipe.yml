@@ -44,6 +44,7 @@ modules:
     install:
       packages:
         - code
+        - plasma-login-manager
         - neovim
         - python3-neovim
         - python3-pip
