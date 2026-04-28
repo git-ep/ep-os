@@ -43,6 +43,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - forgejo-runner
         - podlet
         - nix
         - code
