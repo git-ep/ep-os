@@ -42,6 +42,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - mesa-va-drivers-freeworld
         - forgejo-runner
         - podlet
         - nix
