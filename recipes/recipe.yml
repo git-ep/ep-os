@@ -37,7 +37,6 @@ modules:
 
   - type: script
     snippets:
-      - "dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y"
       - "dnf swap ffmpeg-free ffmpeg --allowerasing -y"
 
   - type: dnf
