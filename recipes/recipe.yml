@@ -18,8 +18,8 @@ modules:
     repos:
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
-      copr:
-        - solopasha/hyprland 
+      # copr:
+      #   - solopasha/hyprland 
       nonfree: rpmfusion
 
 #    replace:
@@ -80,13 +80,13 @@ modules:
         - keepassxc
         - copyq
         - libva-utils
-        - hyprland
+        # - hyprland
+        # - hyprpaper
+        # - hypridle
         - qt6ct
         - waybar
         - wofi
         - dunst
-        - hyprpaper
-        - hypridle
         - chromium
         - kitty
         - firefox
