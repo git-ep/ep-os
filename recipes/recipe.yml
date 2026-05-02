@@ -46,7 +46,6 @@ modules:
         - mesa-va-drivers-freeworld
         - forgejo-runner
         - podlet
-        - nix
         - code
         - plasma-login-manager
         - neovim
