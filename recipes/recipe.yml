@@ -137,6 +137,8 @@ modules:
       - notify: true 
         scope: system
         install: 
+          - org.kde.kolourpaint
+          - org.kde.skanpage
           - tv.kodi.Kodi
           - com.rustdesk.RustDesk
           - com.vscodium.codium
