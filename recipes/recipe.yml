@@ -115,6 +115,7 @@ modules:
         - unison
         - age
         - fzf
+        - power-profiles-daemon
     remove:
       packages:
         - toolbox
