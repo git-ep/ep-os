@@ -198,12 +198,12 @@ modules:
         - cockpit.socket
         - libvirtd.socket
 
-  - type: kargs
-    arch: x86_64
-    kargs:
-      # - rd.neednet=1
-      # - rd.net.timeout.iflink=5 
-      # - amdgpu.abmlevel=0
+  # - type: kargs
+  #   arch: x86_64
+  #   kargs:
+  #     - rd.neednet=1
+  #     - rd.net.timeout.iflink=5 
+  #     - amdgpu.abmlevel=0
 
   - type: initramfs
 
