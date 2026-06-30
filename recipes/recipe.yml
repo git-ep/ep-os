@@ -16,6 +16,8 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
       # copr:
@@ -42,6 +44,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - brave-origin
         - krunvm
         - plasma-bigscreen-wayland
         - mesa-va-drivers-freeworld
@@ -153,7 +156,7 @@ modules:
           - org.onlyoffice.desktopeditors
           - org.qbittorrent.qBittorrent
           - org.videolan.VLC
-          - com.brave.Browser
+          # - com.brave.Browser
           - org.texstudio.TeXstudio
           - org.freedesktop.Sdk.Extension.texlive//25.08
 
