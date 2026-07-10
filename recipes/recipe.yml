@@ -45,7 +45,7 @@ modules:
     install:
       packages:
         - brave-origin
-        - krunvm
+        - incus
         - plasma-bigscreen-wayland
         - mesa-va-drivers-freeworld
         - forgejo-runner
