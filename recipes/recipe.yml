@@ -44,6 +44,8 @@ modules:
   - type: dnf
     install:
       packages:
+        - openvswitch
+        - NetworkManager-ovs
         - brave-origin
         - incus
         - plasma-bigscreen-wayland
