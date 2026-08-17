@@ -44,6 +44,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - nushell
         - openvswitch
         - NetworkManager-ovs
         - brave-origin
