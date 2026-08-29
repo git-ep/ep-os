@@ -44,6 +44,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - zoxide
         - nushell
         - openvswitch
         - NetworkManager-ovs
