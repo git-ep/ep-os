@@ -45,6 +45,7 @@ modules:
     install:
       packages:
         - zoxide
+        - sqlite3
         - nushell
         - openvswitch
         - NetworkManager-ovs
