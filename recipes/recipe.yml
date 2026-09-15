@@ -205,6 +205,11 @@ modules:
         - cockpit.socket
         - libvirtd.socket
 
+  - type: brew
+    brew-analytics: false # disable telemetry
+    auto-update: true
+    auto-upgrade: true
+
   # - type: kargs
   #   arch: x86_64
   #   kargs:
