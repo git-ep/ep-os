@@ -46,9 +46,7 @@ modules:
       packages:
         - mpv-devel
         - samba-usershares
-        - zoxide
         - sqlite3
-        - nushell
         - openvswitch
         - NetworkManager-ovs
         - brave-origin
@@ -56,7 +54,6 @@ modules:
         - plasma-bigscreen-wayland
         - mesa-va-drivers-freeworld
         - forgejo-runner
-        - podlet
         - code
         - plasma-login-manager
         - neovim
@@ -91,12 +88,7 @@ modules:
         - keepassxc
         - copyq
         - libva-utils
-        - qt6ct
-        - waybar
-        - wofi
-        - dunst
         - chromium
-        - kitty
         - firefox
         - mozilla-ublock-origin
         - zathura
