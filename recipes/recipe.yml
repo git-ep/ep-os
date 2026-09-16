@@ -210,6 +210,11 @@ modules:
     auto-update: true
     auto-upgrade: true
 
+  - type: akmods
+    base: main
+    nvidia-driver: nvidia-open
+    install: []
+
   # - type: kargs
   #   arch: x86_64
   #   kargs:
