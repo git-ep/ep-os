@@ -205,7 +205,8 @@ modules:
   - type: akmods
     base: main
     nvidia-driver: nvidia-open
-    install: []
+    install:
+      - wl
 
   # - type: kargs
   #   arch: x86_64
