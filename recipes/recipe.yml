@@ -115,6 +115,7 @@ modules:
         - unison
         - age
         - fzf
+        - kitty
     remove:
       packages:
         - toolbox
