@@ -137,6 +137,7 @@ modules:
       - notify: true 
         scope: system
         install: 
+          - org.mozilla.thunderbird
           - org.kde.kolourpaint
           - org.kde.skanpage
           - tv.kodi.Kodi
