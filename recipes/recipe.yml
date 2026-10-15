@@ -116,6 +116,7 @@ modules:
         - age
         - fzf
         - kitty
+        - kdotool
     remove:
       packages:
         - toolbox
