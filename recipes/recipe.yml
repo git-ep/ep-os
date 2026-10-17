@@ -167,22 +167,27 @@ modules:
   - type: script
     snippets:
       # Install ntfy.sh
-      - "wget https://github.com/binwiederhier/ntfy/releases/download/v2.28.0/ntfy_2.28.0_linux_amd64.tar.gz -O /tmp/ntfy_2.28.0_linux_amd64.tar.gz"
-      - "tar -xzf /tmp/ntfy_2.28.0_linux_amd64.tar.gz -C /tmp"
-      - "cp -a /tmp/ntfy_2.28.0_linux_amd64/ntfy /usr/bin/"
-      - "mkdir /etc/ntfy"
-      - "cp /tmp/ntfy_2.28.0_linux_amd64/client/*.yml /etc/ntfy"
-      - "cp /tmp/ntfy_2.28.0_linux_amd64/server/*.yml /etc/ntfy"
-      - "rm -fr /tmp/ntfy_2.28.0_linux_amd64*"
+      - "mkdir -p /etc/ntfy"
+      - "ntfy_tag=$(curl -fsSL https://api.github.com/repos/binwiederhier/ntfy/releases/latest | jq -r .tag_name)"
+      - "ntfy_version=${ntfy_tag#v}"
+      - "curl -fsSL \"https://github.com/binwiederhier/ntfy/releases/download/$ntfy_tag/ntfy_${ntfy_version}_linux_amd64.tar.gz\" | tar -xz"
+      - "install -Dm755 \"ntfy_${ntfy_version}_linux_amd64/ntfy\" /usr/bin/ntfy"
+      - "install -Dm644 \"ntfy_${ntfy_version}_linux_amd64/client/*.yml\" /etc/ntfy/"
+      - "install -Dm644 \"ntfy_${ntfy_version}_linux_amd64/server/*.yml\" /etc/ntfy/"
+      - "rm -rf \"ntfy_${ntfy_version}_linux_amd64\""
+
       # Install application title bar plasmoid
       - "wget https://github.com/antroids/application-title-bar/releases/latest/download/application-title-bar.plasmoid -O /tmp/application-title-bar.plasmoid"
       - "kpackagetool6 -t Plasma/Applet -g -i /tmp/application-title-bar.plasmoid"
       - "rm /tmp/application-title-bar.plasmoid"
+
       # Rclone from rclone.org
       - "curl https://rclone.org/install.sh | sudo bash"
       - "ln -s /usr/bin/rclone /usr/sbin/mount.rclone"
+
       # zellij
       - "curl --location https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz | tar -C /usr/bin -xz"
+
       # Export any file or directory, allowing read and write permissions in samba
       - "setsebool -P samba_export_all_rw 1" 
 
