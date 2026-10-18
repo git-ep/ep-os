@@ -44,6 +44,8 @@ modules:
   - type: dnf
     install:
       packages:
+        - nushell
+        - mpv-mpris
         - mpv-devel
         - samba-usershares
         - sqlite3
