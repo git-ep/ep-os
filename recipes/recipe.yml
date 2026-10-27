@@ -168,7 +168,6 @@ modules:
 
   - type: script
     scripts:
-      - lazygit.sh
       - ntfy.sh
     snippets:
       # Install application title bar plasmoid
