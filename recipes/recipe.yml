@@ -40,6 +40,7 @@ modules:
   - type: script
     snippets:
       - "dnf swap ffmpeg-free ffmpeg --allowerasing -y"
+      - "dnf swap swap mesa-vulkan-drivers{,-freeworld}"
 
   - type: dnf
     install:
@@ -55,7 +56,6 @@ modules:
         - incus
         - plasma-bigscreen-wayland
         - mesa-va-drivers-freeworld
-        - mesa-vulkan-drivers-freeworld
         - forgejo-runner
         - code
         - plasma-login-manager
