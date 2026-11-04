@@ -40,7 +40,7 @@ modules:
   - type: script
     snippets:
       - "dnf swap ffmpeg-free ffmpeg --allowerasing -y"
-      - "dnf swap swap mesa-vulkan-drivers{,-freeworld}"
+      - "dnf swap mesa-vulkan-drivers{,-freeworld}"
 
   - type: dnf
     install:
