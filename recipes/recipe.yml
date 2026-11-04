@@ -55,6 +55,7 @@ modules:
         - incus
         - plasma-bigscreen-wayland
         - mesa-va-drivers-freeworld
+        - mesa-vulkan-drivers-freeworld
         - forgejo-runner
         - code
         - plasma-login-manager
