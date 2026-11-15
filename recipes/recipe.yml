@@ -42,7 +42,7 @@ modules:
     snippets:
       - "dnf swap ffmpeg-free ffmpeg --allowerasing -y"
       - "dnf swap mesa-vulkan-drivers{,-freeworld} -y"
-      - "dnf config-manager setopt cuda-fedora${OS_VERSION}-x86_64.exclude=nvidia-driver*,cuda-drivers*,nvidia-modprobe,nvidia-persistenced,nvidia-settings,nvidia-libXNVCtrl*,nvidia-xconfig,nvidia-open,nvidia-imex,nvidia-kmod-common,libnvidia-fbc,kmod-nvidia-*-dkms,nvidia-fs*,nvidia-gds*,xorg-x11-nvidia*"
+      - "dnf config-manager setopt cuda-fedora45-x86_64.exclude=nvidia-driver*,cuda-drivers*,nvidia-modprobe,nvidia-persistenced,nvidia-settings,nvidia-libXNVCtrl*,nvidia-xconfig,nvidia-open,nvidia-imex,nvidia-kmod-common,libnvidia-fbc,kmod-nvidia-*-dkms,nvidia-fs*,nvidia-gds*,xorg-x11-nvidia*"
 
   - type: dnf
     install:
