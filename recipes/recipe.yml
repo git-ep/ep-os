@@ -136,6 +136,7 @@ modules:
       google-fonts:
         - Roboto
         - Open Sans
+        - Stardos Stencil
 
   - type: default-flatpaks
     configurations:
