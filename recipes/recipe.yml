@@ -45,6 +45,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - sqm-scripts
         - nushell
         - mpv-mpris
         - mpv-devel
